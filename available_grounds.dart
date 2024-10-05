@@ -12,12 +12,14 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,  // Remove the debug banner
-      home: AvailableGroundsScreen(),
+      home: AvailableGroundsScreen(), // Add const here
     );
   }
 }
 
 class AvailableGroundsScreen extends StatelessWidget {
+  AvailableGroundsScreen({super.key}); // Add key parameter
+
   final List<Ground> grounds = [
     Ground(name: 'Ground 1', location: 'North Complex', isAvailable: true),
     Ground(name: 'Ground 2', location: 'East Complex', isAvailable: false),
@@ -47,7 +49,7 @@ class AvailableGroundsScreen extends StatelessWidget {
 class GroundCard extends StatelessWidget {
   final Ground ground;
 
-  const GroundCard({super.key, required this.ground});
+  const GroundCard({super.key, required this.ground}); // Add key parameter
 
   @override
   Widget build(BuildContext context) {
